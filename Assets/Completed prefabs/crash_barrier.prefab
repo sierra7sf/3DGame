@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6596656}
   m_Layer: 0
   m_Name: crash_barrier
-  m_TagString: Untagged
+  m_TagString: Barrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
