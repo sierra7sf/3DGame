@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 135643253204676612}
   m_Layer: 2
   m_Name: BarsOfGold
-  m_TagString: Gold_Bars
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
