@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    // Start is called before the first frame update
     private SpriteRenderer mySpriteRenderer;
     private Rigidbody rb;
     public float movementSpeed;
+    private int points = 0;
 
     void Start()
     {
@@ -15,7 +15,6 @@ public class CarController : MonoBehaviour
         mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -32,4 +31,27 @@ public class CarController : MonoBehaviour
         }
 
     }
+
+    //Triggers for the car hitting objects
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Barrier")
+        {
+            points -= 10;
+            movementSpeed = movementSpeed / 2;
+            Debug.Log("Hit Barrier");
+        }
+
+        if (other.gameObject.tag == "Coin") {
+            points += 10;
+        }
+
+        if (other.gameObject.tag == "Gas") {
+            movementSpeed = movementSpeed * 2;
+            Destroy(other.gameObject);
+            Debug.Log("Hit Gas");
+        }
+    }
+
+
 }
