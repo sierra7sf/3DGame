@@ -7,15 +7,23 @@ public class GasBar : MonoBehaviour
 {
     public Image gasBar;
 
-    public int Gas;
-    public int MaxGas;
+    public float Gas = 100;
+    public float MaxGas = 100;
 
     // Update is called once per frame
     void Update()
     {
-        Gas -= 1;
-        float fill = Mathf.Clamp(Gas / MaxGas, 0, 1f);
-        print(fill);
-        //gasBar.fillAmount = ;
+        float fill = Gas / MaxGas;
+        Gas = Gas - Time.deltaTime * 5.0f;
+        gasBar.fillAmount = fill;
+
+        if (fill <= 0)
+        {
+            Debug.Log("YOU LOST");
+        }
+   
+        
+     
     }
+
 }
