@@ -10,11 +10,12 @@ public class GasBar : MonoBehaviour
     public int Gas;
     public int MaxGas;
 
-
     // Update is called once per frame
     void Update()
     {
         Gas -= 1;
-        gasBar.fillAmount = Mathf.Clamp(Gas / MaxGas, 0, 1f);
+        float fill = Mathf.Clamp(Gas / MaxGas, 0, 1f);
+        print(fill);
+        //gasBar.fillAmount = ;
     }
 }
