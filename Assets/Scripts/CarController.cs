@@ -33,7 +33,7 @@ public class CarController : MonoBehaviour
     }
 
     //Triggers for the car hitting objects
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Barrier")
         {
