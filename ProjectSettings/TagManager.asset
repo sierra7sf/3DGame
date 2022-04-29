@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Barrier
   - Gas
+  - Coin
   layers:
   - Default
   - TransparentFX

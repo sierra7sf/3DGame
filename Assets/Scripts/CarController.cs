@@ -32,18 +32,22 @@ public class CarController : MonoBehaviour
 
     }
 
-    //Triggers for the car hitting objects
-    private void OnCollisionEnter(Collision other)
+    //on Collision for the car hitting objects
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Barrier")
         {
             points -= 10;
             movementSpeed = movementSpeed / 2;
+            Destroy(other.gameObject);
             Debug.Log("Hit Barrier");
         }
 
         if (other.gameObject.tag == "Coin") {
             points += 10;
+            Destroy(other.gameObject);
+            Debug.Log("points: " + points);
+            Debug.Log("Hit Coin");
         }
 
         if (other.gameObject.tag == "Gas") {
