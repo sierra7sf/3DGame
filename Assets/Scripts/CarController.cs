@@ -39,7 +39,6 @@ public class CarController : MonoBehaviour
         {
             points -= 10;
             movementSpeed = movementSpeed / 2;
-            Destroy(other.gameObject);
             Debug.Log("Hit Barrier");
         }
 
