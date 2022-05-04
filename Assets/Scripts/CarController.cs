@@ -17,13 +17,16 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
+        //Player is always moving
         rb.position += Vector3.right * Time.deltaTime * movementSpeed;
         
+        //If they press the left key the move diagonally to the left
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += (Vector3.forward + Vector3.right) * Time.deltaTime * movementSpeed;
         } 
 
+        //If they press the right key the move diagonally to the right
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += (Vector3.back + Vector3.right) * Time.deltaTime * movementSpeed;
