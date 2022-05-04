@@ -17,17 +17,16 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
+        rb.position += Vector3.right * Time.deltaTime * movementSpeed;
+        
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += Vector3.forward * Time.deltaTime * movementSpeed;
-        }
+            transform.position += (Vector3.forward + Vector3.right) * Time.deltaTime * movementSpeed;
+        } 
+
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            rb.position += Vector3.back * Time.deltaTime * movementSpeed;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            rb.position += Vector3.right * Time.deltaTime * movementSpeed;
+            transform.position += (Vector3.back + Vector3.right) * Time.deltaTime * movementSpeed;
         }
 
     }
