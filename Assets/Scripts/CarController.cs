@@ -9,6 +9,8 @@ public class CarController : MonoBehaviour
     public float movementSpeed;
     private static int points = 0;
 
+    public GasBar gasBar;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -53,10 +55,20 @@ public class CarController : MonoBehaviour
 
         if (other.gameObject.tag == "Gas") {
             movementSpeed = movementSpeed * 2;
+
+            //added by ramiro for gas bar
+            gasBar.increaseGas();
+
+
             Destroy(other.gameObject);
             Debug.Log("Hit Gas");
         }
     }
 
 
+    //added by ramiro for the gas bar 
+    public int get_points()
+    {
+        return points;
+    }
 }

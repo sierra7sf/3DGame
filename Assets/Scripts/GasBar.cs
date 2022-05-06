@@ -7,7 +7,6 @@ public class GasBar : MonoBehaviour
 {
     public Image gasBar;
 
-
     public float Gas = 100;
     public float MaxGas = 100;
 
@@ -23,7 +22,13 @@ public class GasBar : MonoBehaviour
             FindObjectOfType<Game_Manager>().endGame();
         }
    
-       
     }
+
+    public void increaseGas()
+    {
+        Gas += 20;
+    }
+
+
 
 }
