@@ -7,6 +7,7 @@ public class GasBar : MonoBehaviour
 {
     public Image gasBar;
 
+
     public float Gas = 100;
     public float MaxGas = 100;
 
@@ -14,16 +15,15 @@ public class GasBar : MonoBehaviour
     void Update()
     {
         float fill = Gas / MaxGas;
-        Gas = Gas - Time.deltaTime * 5.0f;
+        Gas = Gas - Time.deltaTime * 6.0f;
         gasBar.fillAmount = fill;
 
         if (fill <= 0)
         {
-            Debug.Log("YOU LOST");
+            FindObjectOfType<Game_Manager>().endGame();
         }
    
-        
-     
+       
     }
 
 }
