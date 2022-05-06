@@ -7,7 +7,7 @@ public class CarController : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
     private Rigidbody rb;
     public float movementSpeed;
-    private int points = 0;
+    private static int points = 0;
 
     void Start()
     {
