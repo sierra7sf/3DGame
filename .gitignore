@@ -11,9 +11,7 @@
 /[Mm]emoryCaptures/
 /[Uu]serSettings/
 **/.DS_Store
-UserSettings/EditorUserSettings.asset
-*UserSettings/EditorUserSettings.asset
-/UserSettings/EditorUserSettings.asset
+**/UserSettings/EditorUserSettings.asset
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 /[Aa]ssets/**/*.meta
