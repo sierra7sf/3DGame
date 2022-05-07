@@ -54,7 +54,7 @@ public class CarController : MonoBehaviour
         }
 
         if (other.gameObject.tag == "Gas") {
-            movementSpeed = movementSpeed * 2;
+            StartCoroutine(IncreaseSpeed());
 
             //added by ramiro for gas bar
             gasBar.increaseGas();
@@ -63,6 +63,13 @@ public class CarController : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log("Hit Gas");
         }
+    }
+
+    IEnumerator IncreaseSpeed ()
+    {
+        movementSpeed = movementSpeed * 2;
+        yield return new WaitForSeconds(2);
+        movementSpeed = movementSpeed / 2;
     }
 
 
