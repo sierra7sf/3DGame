@@ -13,17 +13,17 @@ public class StartScreen : MonoBehaviour
 
     public void LevelOne()
     {
-        SceneManager.LoadScene("BaseScene");
+        SceneManager.LoadScene("Level 1");
     }
 
     public void LevelTwo()
     {
-        SceneManager.LoadScene("BaseScene");
+        SceneManager.LoadScene("Level 2");
     }
 
     public void LevelThree()
     {
-        SceneManager.LoadScene("BaseScene");
+        SceneManager.LoadScene("Level 3");
     }
 
     public void Quit()
