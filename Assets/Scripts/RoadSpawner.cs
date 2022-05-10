@@ -12,7 +12,6 @@ public class RoadSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         if(roads != null && roads.Count > 0)
         {
             roads = roads.OrderBy(roads => roads.transform.position.x).ToList();

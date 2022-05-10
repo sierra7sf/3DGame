@@ -53,7 +53,7 @@ public class CarController : MonoBehaviour
     {
         movementSpeed = movementSpeed / 2;
         yield return new WaitForSeconds(1);
-        movementSpeed = 5;
+        movementSpeed = 7;
     }
 
 
@@ -101,6 +101,6 @@ public class CarController : MonoBehaviour
     {
         movementSpeed = movementSpeed * 2;
         yield return new WaitForSeconds(3);
-        movementSpeed = 5;
+        movementSpeed = 7;
     }
 }
