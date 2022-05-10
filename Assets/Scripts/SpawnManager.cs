@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
 
     RoadSpawner roadSpawner;
+    int removeroad_Timer = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -13,14 +14,10 @@ public class SpawnManager : MonoBehaviour
         roadSpawner = GetComponent<RoadSpawner>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SpawnTriggerEnter()
     {
+
         roadSpawner.MoveRoad();
     }
 }

@@ -26,7 +26,15 @@ public class GasBar : MonoBehaviour
 
     public void increaseGas()
     {
-        Gas += 20;
+        if(Gas <= 80)
+        {
+            Gas += 20;
+        }
+        else
+        {
+            Gas = MaxGas;
+        }
+        
     }
 
 

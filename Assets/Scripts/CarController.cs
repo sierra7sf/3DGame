@@ -10,6 +10,7 @@ public class CarController : MonoBehaviour
     private static int points = 0;
 
     public GasBar gasBar;
+    public SpawnManager spawnManager;
 
     void Start()
     {
@@ -63,10 +64,6 @@ public class CarController : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log("Hit Gas");
         }
-        if (other.gameObject.tag == "Goal")
-        {
-            FindObjectOfType<Game_Manager>().endTutorial();
-        }
     }
 
     IEnumerator IncreaseSpeed ()
@@ -87,5 +84,10 @@ public class CarController : MonoBehaviour
     {
         points = 0;
         return points;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        spawnManager.SpawnTriggerEnter();
     }
 }
