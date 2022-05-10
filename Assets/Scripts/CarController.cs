@@ -78,4 +78,10 @@ public class CarController : MonoBehaviour
     {
         return points;
     }
+
+    public int reset_points()
+    {
+        points = 0;
+        return points;
+    }
 }

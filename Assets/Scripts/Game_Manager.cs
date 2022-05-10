@@ -24,6 +24,7 @@ public class Game_Manager : MonoBehaviour
     {
         Debug.Log("Game Over");
         GameOverScript.Setup(score);
+        //score = Player_script.reset_points();
     }
 
 }
