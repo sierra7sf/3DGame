@@ -40,37 +40,20 @@ public class CarController : MonoBehaviour
     //on Collision for the car hitting objects
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Barrier")
+        if (other.gameObject.tag == "Cone")
         {
             points -= 10;
-            movementSpeed = movementSpeed / 2;
-            Debug.Log("Hit Barrier");
+            StartCoroutine(HitCone());
+            Debug.Log("Hit Cone");
         }
 
-        if (other.gameObject.tag == "Coin") {
-            points += 10;
-            Destroy(other.gameObject);
-            Debug.Log("points: " + points);
-            Debug.Log("Hit Coin");
-        }
-
-        if (other.gameObject.tag == "Gas") {
-            StartCoroutine(IncreaseSpeed());
-
-            //added by ramiro for gas bar
-            gasBar.increaseGas();
-
-
-            Destroy(other.gameObject);
-            Debug.Log("Hit Gas");
-        }
     }
 
-    IEnumerator IncreaseSpeed ()
+    IEnumerator HitCone()
     {
-        movementSpeed = movementSpeed * 2;
-        yield return new WaitForSeconds(2);
         movementSpeed = movementSpeed / 2;
+        yield return new WaitForSeconds(1);
+        movementSpeed = 5;
     }
 
 
@@ -88,6 +71,36 @@ public class CarController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        spawnManager.SpawnTriggerEnter();
+        if (other.gameObject.tag == "Coin")
+        {
+            points += 10;
+            Destroy(other.gameObject);
+            Debug.Log("points: " + points);
+            Debug.Log("Hit Coin");
+        }
+
+        if (other.gameObject.tag == "Gas")
+        {
+            StartCoroutine(IncreaseSpeed());
+
+            //added by ramiro for gas bar
+            gasBar.increaseGas();
+
+
+            Destroy(other.gameObject);
+            Debug.Log("Hit Gas");
+        }
+        if(other.gameObject.tag == "SpawnTrigger")
+        {
+            spawnManager.SpawnTriggerEnter();
+        }
+        
+    }
+
+    IEnumerator IncreaseSpeed()
+    {
+        movementSpeed = movementSpeed * 2;
+        yield return new WaitForSeconds(3);
+        movementSpeed = 5;
     }
 }
