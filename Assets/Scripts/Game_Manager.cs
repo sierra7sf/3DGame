@@ -8,6 +8,7 @@ public class Game_Manager : MonoBehaviour
 
     
     public Game_Over GameOverScript;
+    public Tutorial_Over TutorialOverScript;
     public CarController Player_script;
     public Text pointsCounter;
     public int score;
@@ -27,4 +28,8 @@ public class Game_Manager : MonoBehaviour
         //score = Player_script.reset_points();
     }
 
+    public void endTutorial()
+    {
+        TutorialOverScript.Setup(score);
+    }
 }

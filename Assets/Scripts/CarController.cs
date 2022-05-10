@@ -63,6 +63,10 @@ public class CarController : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log("Hit Gas");
         }
+        if (other.gameObject.tag == "Goal")
+        {
+            FindObjectOfType<Game_Manager>().endTutorial();
+        }
     }
 
     IEnumerator IncreaseSpeed ()
