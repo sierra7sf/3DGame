@@ -510,6 +510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   gasBar: {fileID: 0}
+  spawnManager: {fileID: 0}
 --- !u!1 &7101919340627722035
 GameObject:
   m_ObjectHideFlags: 0
