@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 4f5778e9dedc8471ba6c4169dccfd324
+  - enabled: 1
+    path: Assets/Scenes/EndlessRunner.unity
+    guid: 568466ae34d36488cb7c97ddc5f629f1
   m_configObjects: {}

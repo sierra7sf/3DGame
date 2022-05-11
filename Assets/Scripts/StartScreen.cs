@@ -13,7 +13,7 @@ public class StartScreen : MonoBehaviour
     
     public void EndlessRunner()
     {
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene("EndlessRunner");
     }
 
     public void Quit()

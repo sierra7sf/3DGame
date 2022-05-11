@@ -361,6 +361,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bf4024b271364e7dbe014304ee74da6, type: 3}
+--- !u!114 &934446960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5605127397733851062, guid: 4e354bfcef8ce41048d9a1fad9ee4a5a, type: 3}
+  m_PrefabInstance: {fileID: 958919115}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72b84b1e71494c3a842b4ddfc5542ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &958919115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -467,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 6472469393987511021, guid: 4e354bfcef8ce41048d9a1fad9ee4a5a, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 61a7b5e81aca74194b1c695298538595, type: 3}
+      objectReference: {fileID: 12800000, guid: 6812dc0f30d2c45058e0b7d5519bdcbf, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e354bfcef8ce41048d9a1fad9ee4a5a, type: 3}
 --- !u!114 &1074887315 stripped
@@ -479,17 +490,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073aa1763ce2145dfb29ed90a476a57b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1120255921 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5605127397733851062, guid: 4e354bfcef8ce41048d9a1fad9ee4a5a, type: 3}
-  m_PrefabInstance: {fileID: 958919115}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e72b84b1e71494c3a842b4ddfc5542ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1253868005
@@ -637,7 +637,7 @@ PrefabInstance:
     - target: {fileID: 7503873497384533399, guid: d433d573a940d4a3d98bff773a36de9c, type: 3}
       propertyPath: gasBar
       value: 
-      objectReference: {fileID: 1120255921}
+      objectReference: {fileID: 934446960}
     - target: {fileID: 7503873497384533399, guid: d433d573a940d4a3d98bff773a36de9c, type: 3}
       propertyPath: spawnManager
       value: 
