@@ -12,6 +12,8 @@ public class CarController : MonoBehaviour
     public GasBar gasBar;
     public SpawnManager spawnManager;
 
+    public GameObject explosion;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -82,6 +84,7 @@ public class CarController : MonoBehaviour
 
     IEnumerator HitCone()
     {
+        Instantiate(explosion, transform.position, Quaternion.identity);
         movementSpeed = movementSpeed / 2;
         yield return new WaitForSeconds(1);
         movementSpeed = 7;
