@@ -92,9 +92,14 @@ public class CarController : MonoBehaviour
         }
         if(other.gameObject.tag == "SpawnTrigger")
         {
-            spawnManager.SpawnTriggerEnter();
+            spawnManager.SpawnRoadTriggerEnter();
         }
-        
+        if (other.gameObject.tag == "ObjectSpawnTrigger")
+        {
+            Debug.Log("hit Object spawn trigger");
+            spawnManager.SpawnObjectsTriggerEnter();
+        }
+
     }
 
     IEnumerator IncreaseSpeed()

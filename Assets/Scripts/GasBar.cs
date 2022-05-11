@@ -19,10 +19,12 @@ public class GasBar : MonoBehaviour
 
         if (fill <= 0)
         {
+            fill = 0;
             FindObjectOfType<Game_Manager>().endGame();
         }
    
     }
+
 
     public void increaseGas()
     {
