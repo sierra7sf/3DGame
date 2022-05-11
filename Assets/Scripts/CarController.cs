@@ -22,12 +22,11 @@ public class CarController : MonoBehaviour
     {
         //Player is always moving
         rb.position += Vector3.right * Time.deltaTime * movementSpeed;
-        
         //If they press the left key the move diagonally to the left
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += (Vector3.forward + Vector3.right) * Time.deltaTime * movementSpeed;
-        } 
+        }
 
         //If they press the right key the move diagonally to the right
         else if (Input.GetKey(KeyCode.RightArrow))
@@ -36,27 +35,6 @@ public class CarController : MonoBehaviour
         }
 
     }
-
-    //on Collision for the car hitting objects
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Cone")
-        {
-            points -= 10;
-            gasBar.LightDecreaseGas();
-            StartCoroutine(HitCone());
-            Debug.Log("Hit Cone");
-        }
-
-    }
-
-    IEnumerator HitCone()
-    {
-        movementSpeed = movementSpeed / 2;
-        yield return new WaitForSeconds(1);
-        movementSpeed = 7;
-    }
-
 
     //added by ramiro for the gas bar 
     public int get_points()
@@ -91,8 +69,22 @@ public class CarController : MonoBehaviour
             Destroy(other.gameObject);
             //Debug.Log("Hit Gas");
         }
-        
+        if (other.gameObject.tag == "Cone")
+        {
+            points -= 10;
+            gasBar.LightDecreaseGas();
+            StartCoroutine(HitCone());
+            Destroy(other.gameObject);
+            Debug.Log("Hit Cone");
+        }
 
+    }
+
+    IEnumerator HitCone()
+    {
+        movementSpeed = movementSpeed / 2;
+        yield return new WaitForSeconds(1);
+        movementSpeed = 7;
     }
 
     private void OnTriggerExit(Collider other)
