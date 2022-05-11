@@ -8,7 +8,7 @@ public class Game_Manager : MonoBehaviour
 
     
     public Game_Over GameOverScript;
-    //public Tutorial_Over TutorialOverScript;
+    public Tutorial_Over TutorialOverScript;
     public CarController Player_script;
     public Text pointsCounter;
     public int score;
@@ -25,11 +25,11 @@ public class Game_Manager : MonoBehaviour
     {
         Debug.Log("Game Over");
         GameOverScript.Setup(score);
-        //score = Player_script.reset_points();
+        score = Player_script.reset_points();
     }
 
-    //public void endTutorial()
-    //{
-    //    TutorialOverScript.Setup(score);
-    //}
+    public void endTutorial()
+    {
+       TutorialOverScript.Setup(score);
+    }
 }
