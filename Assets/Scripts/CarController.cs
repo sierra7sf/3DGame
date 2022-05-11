@@ -85,7 +85,7 @@ public class CarController : MonoBehaviour
     IEnumerator HitCone()
     {
         Instantiate(explosion, transform.position, Quaternion.identity);
-        movementSpeed = movementSpeed / 2;
+        movementSpeed = 1;
         yield return new WaitForSeconds(1);
         movementSpeed = 7;
     }
@@ -105,7 +105,7 @@ public class CarController : MonoBehaviour
 
     IEnumerator IncreaseSpeed()
     {
-        movementSpeed = movementSpeed * 2;
+        movementSpeed = 14;
         yield return new WaitForSeconds(3);
         movementSpeed = 7;
     }
