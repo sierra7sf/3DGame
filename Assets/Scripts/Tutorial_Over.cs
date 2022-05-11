@@ -21,7 +21,7 @@ public class Tutorial_Over : MonoBehaviour
 
     public void EndlessRunnerButton()
     {
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene("EndlessRunner");
     }
 
 }
