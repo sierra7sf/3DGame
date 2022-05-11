@@ -79,6 +79,10 @@ public class CarController : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log("Hit Cone");
         }
+        if (other.gameObject.tag == "Goal")
+        {
+            FindObjectOfType<Game_Manager>().endTutorial();
+        }
 
     }
 
