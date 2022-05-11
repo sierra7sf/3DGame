@@ -304,18 +304,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4177212049303230751, guid: 0bf4024b271364e7dbe014304ee74da6, type: 3}
   m_PrefabInstance: {fileID: 728312925}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &518539813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518539811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c116bfd1f2b6d424799ee84dd16440dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &728312925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -467,6 +455,14 @@ PrefabInstance:
     - target: {fileID: 5605127397018459955, guid: 4e354bfcef8ce41048d9a1fad9ee4a5a, type: 3}
       propertyPath: m_Name
       value: UI Overlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605127397733851062, guid: 4e354bfcef8ce41048d9a1fad9ee4a5a, type: 3}
+      propertyPath: Gas
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605127397733851062, guid: 4e354bfcef8ce41048d9a1fad9ee4a5a, type: 3}
+      propertyPath: MaxGas
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6472469393987511021, guid: 4e354bfcef8ce41048d9a1fad9ee4a5a, type: 3}
       propertyPath: m_FontData.m_Font
@@ -630,6 +626,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4001877263441308404, guid: d433d573a940d4a3d98bff773a36de9c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6662534228329869031, guid: d433d573a940d4a3d98bff773a36de9c, type: 3}
       propertyPath: m_Name
       value: RTI_Blue
@@ -721,11 +721,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358e0aa5b15114c52908eea3067f8d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOver: 0
   GameOverScript: {fileID: 1074887315}
   TutorialOverScript: {fileID: 0}
   Player_script: {fileID: 330057183}
   pointsCounter: {fileID: 2070569478}
   score: 0
+  finalScore: 0
 --- !u!4 &1326136432
 Transform:
   m_ObjectHideFlags: 0
@@ -787,6 +789,11 @@ MonoBehaviour:
   - {fileID: 1938070163}
   - {fileID: 518539811}
   - {fileID: 1807308809}
+  Collectables:
+  - {fileID: 7458041770025064789, guid: 7433ed0aca90d497c82bf4410611d350, type: 3}
+  - {fileID: 7312428195953200497, guid: 18d399f4b4bd9495aa3a4663ae7c9d9a, type: 3}
+  - {fileID: 3858690504137924485, guid: 1465574f2c2be4f05b29d734094065c2, type: 3}
+  - {fileID: 6564734977694337175, guid: 8d3352409f2404c758ef47561f4648cd, type: 3}
 --- !u!4 &1438255656
 Transform:
   m_ObjectHideFlags: 0
@@ -844,18 +851,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4386265903781383427, guid: a01b03309e87746d38e3de195d139a73, type: 3}
   m_PrefabInstance: {fileID: 207466317}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1807308811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807308809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c116bfd1f2b6d424799ee84dd16440dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1884760003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,18 +1011,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6001228800714780686, guid: 9d818e321734e4f7dbdf738100f0eea7, type: 3}
   m_PrefabInstance: {fileID: 1916867123}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1938070165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938070163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c116bfd1f2b6d424799ee84dd16440dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2070569478 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6472469393987511021, guid: 4e354bfcef8ce41048d9a1fad9ee4a5a, type: 3}

@@ -11,7 +11,7 @@ public class RoadSpawner : MonoBehaviour
     private float offset = 110f;
 
     //ObjectSpawnBox offsets
-    private float minX_offset = 10;
+    private float minX_offset = 30;
     private float maxX_offset = 105;
     private float minZ_offset = -9.8f;
     private float maxZ_offset = 1.5f;
@@ -40,26 +40,31 @@ public class RoadSpawner : MonoBehaviour
         Debug.Log("Object spawned");
 
         GameObject CurrentRoad = roads[0];
-        float minX = CurrentRoad.transform.position.x + minX_offset;
-        float maxX = CurrentRoad.transform.position.x + maxX_offset;
-        float minZ = CurrentRoad.transform.position.z + minZ_offset;
-        float maxZ = CurrentRoad.transform.position.z + maxZ_offset;
+        float curX = CurrentRoad.transform.position.x;
+        //float maxX = CurrentRoad.transform.position.x + maxX_offset;
+        float curZ = CurrentRoad.transform.position.z;
+        //float maxZ = CurrentRoad.transform.position.z + maxZ_offset;
+        //Debug.Log(CurrentRoad.transform.position.x);
+        //Debug.Log(maxX);maxX
+
 
 
         int RandomIndex = Random.Range(0, Collectables.Count);
-        Vector3 RandomSpawnPos = new Vector3(Random.Range(minX + 20, maxX/2), 1.2f , Random.Range(minZ, maxZ));
+        Vector3 RandomSpawnPos = new Vector3(curX + Random.Range(10, 30), 1.2f, curZ + Random.Range(-2,2));
+        Debug.Log(RandomSpawnPos.x);
+
         Instantiate(Collectables[RandomIndex], RandomSpawnPos, Quaternion.identity);
 
 
         RandomIndex = Random.Range(0, Collectables.Count);
-        Vector3 RandomSpawnPos2 = new Vector3(RandomSpawnPos.x + Random.Range(minX_offset+ 20, maxX_offset - 20),
-                                              RandomSpawnPos.y, RandomSpawnPos.z + Random.Range(minZ_offset/3, maxZ_offset / 3));
+        Vector3 RandomSpawnPos2 = new Vector3(RandomSpawnPos.x + Random.Range(20, 30),
+                                              RandomSpawnPos.y, RandomSpawnPos.z + Random.Range(-2, 2));
         Instantiate(Collectables[RandomIndex], RandomSpawnPos2, Quaternion.identity);
 
 
         RandomIndex = Random.Range(0, Collectables.Count);
-        Vector3 RandomSpawnPos3 = new Vector3(RandomSpawnPos2.x + Random.Range(minX_offset + 20, maxX_offset - 20),
-                                              RandomSpawnPos.y, RandomSpawnPos.z + Random.Range(minZ_offset / 3, maxZ_offset / 3));
+        Vector3 RandomSpawnPos3 = new Vector3(RandomSpawnPos2.x + Random.Range(20, 30),
+                                              RandomSpawnPos2.y, RandomSpawnPos.z + Random.Range(-2, 2));
 
         Instantiate(Collectables[RandomIndex], RandomSpawnPos3, Quaternion.identity);
     }

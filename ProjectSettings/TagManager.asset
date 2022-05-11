@@ -8,6 +8,9 @@ TagManager:
   - Gas
   - Coin
   - Goal
+  - SpawnTrigger
+  - Cone
+  - ObjectSpawnTrigger
   layers:
   - Default
   - TransparentFX

@@ -28,9 +28,9 @@ public class GasBar : MonoBehaviour
 
     public void increaseGas()
     {
-        if(Gas <= 80)
+        if(Gas <= 70)
         {
-            Gas += 20;
+            Gas += 30;
         }
         else
         {
@@ -39,6 +39,10 @@ public class GasBar : MonoBehaviour
         
     }
 
-
+    
+    public void LightDecreaseGas()
+    {
+        Gas -= 10;
+    }
 
 }

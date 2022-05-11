@@ -692,8 +692,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gasBar: {fileID: 5605127397733851060}
-  Gas: 100
-  MaxGas: 100
+  Gas: 1000
+  MaxGas: 1000
 --- !u!1 &5605127398194289411
 GameObject:
   m_ObjectHideFlags: 0

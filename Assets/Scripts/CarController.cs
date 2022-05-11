@@ -43,6 +43,7 @@ public class CarController : MonoBehaviour
         if (other.gameObject.tag == "Cone")
         {
             points -= 10;
+            gasBar.LightDecreaseGas();
             StartCoroutine(HitCone());
             Debug.Log("Hit Cone");
         }
@@ -75,8 +76,8 @@ public class CarController : MonoBehaviour
         {
             points += 10;
             Destroy(other.gameObject);
-            Debug.Log("points: " + points);
-            Debug.Log("Hit Coin");
+            //Debug.Log("points: " + points);
+            //Debug.Log("Hit Coin");
         }
 
         if (other.gameObject.tag == "Gas")
@@ -88,9 +89,15 @@ public class CarController : MonoBehaviour
 
 
             Destroy(other.gameObject);
-            Debug.Log("Hit Gas");
+            //Debug.Log("Hit Gas");
         }
-        if(other.gameObject.tag == "SpawnTrigger")
+        
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "SpawnTrigger")
         {
             spawnManager.SpawnRoadTriggerEnter();
         }
@@ -99,7 +106,6 @@ public class CarController : MonoBehaviour
             Debug.Log("hit Object spawn trigger");
             spawnManager.SpawnObjectsTriggerEnter();
         }
-
     }
 
     IEnumerator IncreaseSpeed()

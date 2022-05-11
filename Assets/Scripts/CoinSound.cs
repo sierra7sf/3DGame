@@ -8,7 +8,6 @@ public class CoinSound : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HOUND TOOTH");
         AudioSource.PlayClipAtPoint(coin, transform.position);
     }
 }
