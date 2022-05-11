@@ -11,7 +11,8 @@ public class CarController : MonoBehaviour
 
     public GasBar gasBar;
     public SpawnManager spawnManager;
-
+    public float minZ = 0;
+    public float maxZ = 0;
     public GameObject explosion;
 
     void Start()
@@ -25,6 +26,9 @@ public class CarController : MonoBehaviour
         //Player is always moving
         rb.position += Vector3.right * Time.deltaTime * movementSpeed;
         //If they press the left key the move diagonally to the left
+        float zPos = rb.position.z;
+        float zLimit = Mathf.Clamp(zPos, minZ, maxZ);
+        transform.position = new Vector3(rb.position.x, rb.position.y, zLimit);
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += (Vector3.forward + Vector3.right) * Time.deltaTime * movementSpeed;
