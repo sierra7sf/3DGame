@@ -19,6 +19,8 @@ public class CarController : MonoBehaviour
     public bool movingLeft = false;
     public bool movingRight = false;
     public bool movingForward = false;
+    public float minZ = 0;
+    public float maxZ = 0;
 
     public GameObject explosion;
 
@@ -34,8 +36,8 @@ public class CarController : MonoBehaviour
         rb.position += Vector3.right * Time.deltaTime * movementSpeed;
         movingForward = true;
         float zPos = rb.position.z;
-        float maxZ = Mathf.Clamp(zPos, -4.0f, 4.0f);
-        transform.position = new Vector3(rb.position.x, rb.position.y, maxZ);
+        float zLimit = Mathf.Clamp(zPos, minZ, maxZ);
+        transform.position = new Vector3(rb.position.x, rb.position.y, zLimit);
 
         //If they press the left key the move diagonally to the left
         if (Input.GetKey(KeyCode.LeftArrow))
