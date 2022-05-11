@@ -31,10 +31,12 @@ public class Game_Manager : MonoBehaviour
         GameOver = true;
         GameOverScript.Setup(finalScore);
         score = Player_script.reset_points();
+        Player_script.movementSpeed = 0;
     }
 
     public void endTutorial()
     {
        TutorialOverScript.Setup(score);
+       Player_script.movementSpeed = 0;
     }
 }
