@@ -34,7 +34,7 @@ public class CarController : MonoBehaviour
         rb.position += Vector3.right * Time.deltaTime * movementSpeed;
         movingForward = true;
         float zPos = rb.position.z;
-        float maxZ = Mathf.Clamp(zPos, 5.5f, 14.5f);
+        float maxZ = Mathf.Clamp(zPos, -4.0f, 4.0f);
         transform.position = new Vector3(rb.position.x, rb.position.y, maxZ);
 
         //If they press the left key the move diagonally to the left
